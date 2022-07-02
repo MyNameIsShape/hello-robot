@@ -60,3 +60,11 @@ module.exports.run = function(input) {
 	}.bind({input: input})
 	);
 }
+
+//hellorobot.test
+  //Runs a unit test.  
+module.exports.test = async function() {
+	//console.log(hellorobot);
+	var msg = await module.exports.run("server status")
+	console.log(msg.answer);
+}
