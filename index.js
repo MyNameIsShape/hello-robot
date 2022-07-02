@@ -13,6 +13,8 @@ module.exports.isReady = false;
 //  returns a promise that resolves to the trained chat model
 module.exports.init = function() {
 	
+	module.exports.initialized = true;
+	
 	//Instantiate the NLP manager
 	module.exports.manager = new NlpManager({ languages: ['en'], forceNER: true, nlu: { log: false } });
 	
@@ -53,8 +55,13 @@ module.exports.init = function() {
 module.exports.run = function(input) {
 	return new Promise(
 		async function(resolve) {
-		if(!module.exports.initialized) 
-			await module.exports.init();
+		if(!module.exports.isReady) { 
+			if(!module.exports.initialized) {
+				module.exports.initialized = true;
+				await module.exports.init();
+			}
+			await module.exports.isReady == true;
+		}
 		const resp = module.exports.manager.process(this.input);
 		resolve(resp);
 	}.bind({input: input})
@@ -64,7 +71,7 @@ module.exports.run = function(input) {
 //hellorobot.test
   //Runs a unit test.  
 module.exports.test = async function() {
-	//console.log(hellorobot);
+	
 	var msg = await module.exports.run("server status")
 	console.log(msg.answer);
 }
