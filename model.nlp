@@ -1,0 +1,365 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "forceNER": true,
+    "nlu": {
+      "log": false
+    },
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager",
+      "log": false
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "initiali,server,status": {
+            "intent": "server.status",
+            "domain": "default"
+          },
+          "server,status": {
+            "intent": "server.status",
+            "domain": "default"
+          },
+          "goodby": {
+            "intent": "server.status",
+            "domain": "default"
+          },
+          "bye": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "greet": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "server.status": "default",
+          "greetings.bye": "default",
+          "greetings.hello": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "server initialiation status",
+            "intent": "server.status"
+          },
+          {
+            "domain": "default",
+            "utterance": "server status",
+            "intent": "server.status"
+          },
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "server.status"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye bye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "hello",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "greetings",
+            "intent": "greetings.hello"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "server": 1,
+              "initiali": 1,
+              "status": 1,
+              "goodby": 1,
+              "bye": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "hello": 1,
+              "hi": 1,
+              "greet": 1
+            },
+            "intents": {
+              "server.status": 1,
+              "greetings.bye": 1,
+              "greetings.hello": 1
+            },
+            "intentFeatures": {
+              "server.status": {
+                "server": 1,
+                "initiali": 1,
+                "status": 1,
+                "goodby": 1
+              },
+              "greetings.bye": {
+                "bye": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1
+              },
+              "greetings.hello": {
+                "hello": 1,
+                "hi": 1,
+                "greet": 1
+              }
+            },
+            "featuresToIntent": {
+              "server": [
+                "server.status"
+              ],
+              "initiali": [
+                "server.status"
+              ],
+              "status": [
+                "server.status"
+              ],
+              "goodby": [
+                "server.status"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "hello": [
+                "greetings.hello"
+              ],
+              "hi": [
+                "greetings.hello"
+              ],
+              "greet": [
+                "greetings.hello"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true
+              },
+              "features": [
+                "server",
+                "initiali",
+                "status",
+                "goodby",
+                "bye",
+                "see",
+                "you",
+                "later",
+                "hello",
+                "hi",
+                "greet"
+              ],
+              "intents": [
+                "server.status",
+                "greetings.bye",
+                "greetings.hello"
+              ],
+              "perceptrons": [
+                [
+                  5.667154788970947,
+                  0.43913304805755615,
+                  5.667154788970947,
+                  11.4277925491333,
+                  -2.6909425258636475,
+                  -0.9373165965080261,
+                  -0.9373165965080261,
+                  -0.9373165965080261,
+                  -2.6825714111328125,
+                  -2.6745519638061523,
+                  -2.6660995483398438,
+                  2.715851220435456
+                ],
+                [
+                  -1.214210033416748,
+                  -0.4706558883190155,
+                  -1.214210033416748,
+                  -2.3773698806762695,
+                  11.699294090270996,
+                  3.9499688148498535,
+                  3.9499688148498535,
+                  3.9499688148498535,
+                  -2.406505823135376,
+                  -2.399360179901123,
+                  -2.3918099403381348,
+                  2.430176448301888
+                ],
+                [
+                  -2.7434799671173096,
+                  -0.9931244254112244,
+                  -2.7434799671173096,
+                  -5.365070819854736,
+                  -5.343691349029541,
+                  -1.8209919929504395,
+                  -1.8209919929504395,
+                  -1.8209919929504395,
+                  8.749080657958984,
+                  8.747371673583984,
+                  8.728116035461426,
+                  5.474933975949279
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "server initialiation status"
+      ],
+      [
+        "en",
+        "server status"
+      ],
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "bye bye"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "hello"
+      ],
+      [
+        "en",
+        "hi"
+      ],
+      [
+        "en",
+        "greetings"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "server.status": [
+          {
+            "answer": "The server is ready."
+          }
+        ],
+        "greetings.bye": [
+          {
+            "answer": "Goodbye."
+          },
+          {
+            "answer": "See you, code cowboy."
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "Hey!"
+          },
+          {
+            "answer": "Greetings!"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
