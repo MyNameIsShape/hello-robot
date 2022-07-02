@@ -22,7 +22,7 @@ module.exports.init = function() {
 	module.exports.manager.addDocument('en', 'server initialization status', 'server.status');
 	module.exports.manager.addDocument('en', 'server status', 'server.status');
 	
-	module.exports.manager.addDocument('en', 'goodbye', 'server.status');
+	module.exports.manager.addDocument('en', 'goodbye', 'greetings.bye');
 	module.exports.manager.addDocument('en', 'bye bye', 'greetings.bye');
 	module.exports.manager.addDocument('en', 'see you later', 'greetings.bye');
 	module.exports.manager.addDocument('en', 'hello', 'greetings.hello');
