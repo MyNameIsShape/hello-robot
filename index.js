@@ -19,7 +19,7 @@ module.exports.init = function() {
 	module.exports.manager = new NlpManager({ languages: ['en'], forceNER: true, nlu: { log: false } });
 	
 	// Adds intents
-	module.exports.manager.addDocument('en', 'server initialiation status', 'server.status');
+	module.exports.manager.addDocument('en', 'server initialization status', 'server.status');
 	module.exports.manager.addDocument('en', 'server status', 'server.status');
 	
 	module.exports.manager.addDocument('en', 'goodbye', 'server.status');
